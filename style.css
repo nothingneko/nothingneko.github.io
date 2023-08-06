@@ -10,7 +10,7 @@ body {
 .nav {
   height: 50px;
   width: 100%;
-  background-color: #4d4d4d;
+  background-color: #fb7e9e;
   position: relative;
 }
 
@@ -21,7 +21,7 @@ body {
 .nav > .nav-header > .nav-title {
   display: inline-block;
   font-size: 22px;
-  color: #fff;
+  color: #321a20;
   padding: 10px 10px 10px 10px;
 }
 
