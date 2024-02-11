@@ -95,3 +95,6 @@ body {
     overflow-y: auto;
   }
 }
+.content {
+  padding-left: 20px; /* Adjust the padding as needed */
+}
