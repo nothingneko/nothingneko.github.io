@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hacking on surface rt - jade's blog</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=DM+Sans"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: "DM Sans", sans-serif;
+      }
+      holder {
+        border: 1px solid #eebfce;
+        background-color: #ffccdd;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+  <div class="nav">
+    <input type="checkbox" id="nav-check" />
+    <div class="nav-header">
+      <div class="nav-title">blog - 猫</div>
+    </div>
+    <div class="nav-btn">
+      <label for="nav-check">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html" target="_blank">index</a>
+      <a href="https://github.com/nothingneko" target="_blank">github</a>
+      <a href="https://ordinary.cafe/@jaiden" target="_blank">fedi</a>
+      <a href="https://twitter.com/nothingneko_" target="_blank">twitter</a>
+      <a href="https://bsky.app/profile/jaiden.sh" target="_blank">bsky</a>
+    </div>
+  </div>
+  <div class="content">
+    <br />
+    <p>hacking on surface rt</p>
+    <br />
+    <br />
+    <p>
+      helo, this is my first solo blog post in a very very long time. i'm
+      jaiden, i've most notably written on the fyra blog lately. but this is
+      entirely unrelated to ultramarine (which doesn't support armv7) and fyra
+      (this device probably violates security policy.) so i've decided to set up
+      my own blog and write about it here :3.
+    </p>
+    <p>
+      this story starts a day or two ago at free geek twin cities. one of my
+      favourite places. i was volunteering with my bestie Owen
+      <a href="https://owenzimmerman.com" target="_blank">[owensz]</a> and Jonah
+      <a href="jonah.whatever" target="_blank">[jonah]</a>. Owen and i were both
+      given surface rt tablets with keyboards, i got a 64gb model and Owen got a
+      32gb model. i dont think anyone would have bought these in the store so i
+      dont feel that bad.
+    </p>
+    <p>
+      both tablets had a strange firmware issue, but i was able to get around it
+      on the 64gb model, but the 32gb model was still softbricked. once i get
+      home i start to reset mine, while doing this i discover something
+      terrible, the battery in my surface was dead. i finish resetting it and
+      put it aside for the night.
+    </p>
+    <p>
+      next day! owen comes over to hack on stuff together. this is where the
+      real fun begins. i discovered that the battery was bulging (owo) on the
+      64gb model, so i removed it. what surprised me was how easy it was. take a
+      look at the
+      <a
+        href="https://www.ifixit.com/Guide/Microsoft+Surface+Battery+Pack+Replacement/12587"
+        >ifixit page</a
+      >, it was seriously 19 screws, no heat gun, no nothing.
+    </p>
+    <p>
+      seeing as my rt had a bad battery, i opted to purchase owen's in addition
+      to mine. the 32gb model had some kind of firmware issue, which i was able
+      to track back to a broken copy of windows. my theory is that someone
+      attempted to install linux previously, and it went poorly.
+    </p>
+    <p>
+      now for the fun part, i had to jailbreak them.
+      <a href="https://openrt.gitbook.io/open-surfacert/surface-rt/"
+        >the docs</a
+      >
+      are out of date, so join their discord if you're looking to do this
+      yourself.
+    </p>
+    <img
+      src="assets/jailbreak.jpeg"
+      alt="the jailbreak utility"
+      style="width: 500px"
+      ;
+    />
+    <p>
+      this was pretty easy once i got the right bits, you just install golden
+      keys (which is a couple keypresses) and then run yahallo (also a couple
+      keypresses.)
+    </p>
+    <p>
+      after i was done with this, i flashed one of the prebuilt raspbian images
+      and crossed my fingers
+    </p>
+    <img src="assets/raspbian.jpeg" alt="raspbian" style="width: 500px" ; />
+    <p>everything i've tried so far works perfectly!</p>
+    <p>
+      now i had a choice to make, do i want to completely wipe out windows and
+      use linux? or keep windows. i found out that you could run a leaked build
+      of windows 10, so i opted to keep windows on here for now. i'm going to
+      use rt and build a custom 10 image later.
+    </p>
+    <p>
+      from here i (slowly) upgraded to rt 8.1, and followed the instructions to
+      set up grub given to me by Jethrob/jeybee from the Open RT discord.
+    </p>
+    <img
+      src="assets/done.jpeg"
+      alt="raspbian desktop on the rt"
+      style="width: 500px"
+      ;
+    />
+    <p>
+      and here we are! we have raspbian on a surface rt booting from SD, this
+      was a really fun time, and i'm excited to have a new strange machine with
+      linux for my collection. here's a bonus picture.
+    </p>
+    <img src="assets/winrt.jpeg" alt="winrt on it" style="width: 500px" ; />
+    <br />
+    <p>
+      thank you for listening to my rambling, so long, and thanks for all the
+      fish!
+    </p>
+  </div>
+</html>
