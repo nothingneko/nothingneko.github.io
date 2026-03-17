@@ -5,6 +5,22 @@
 body {
     margin: 0px;
     font-family: "JetBrains Mono", sans-serif;
+    background-color: #1a1014;
+    color: #e8d5db;
+}
+
+a {
+    color: #fb7e9e;
+}
+
+a:hover {
+    color: #fca5be;
+}
+
+code {
+    background-color: #2e1e24;
+    padding: 2px 5px;
+    border-radius: 3px;
 }
 
 .nav {
@@ -44,6 +60,7 @@ body {
 
 .nav > .nav-links > a:hover {
     background-color: rgba(0, 0, 0, 0.3);
+    color: #321a20;
 }
 
 .nav > #nav-check {
