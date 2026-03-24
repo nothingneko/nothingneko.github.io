@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>learning to appreciate dotfiles - jaiden's blog</title>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=JetBrains+Mono"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <script
+            defer
+            data-domain="jaiden.sh"
+            src="https://plausible.fyralabs.com/js/script.js"
+        ></script>
+    </head>
+    <body>
+        <nav class="nav">
+            <input type="checkbox" id="nav-check" />
+            <div class="nav-header">
+                <div class="nav-title">learning to appreciate dotfiles</div>
+            </div>
+            <div class="nav-btn">
+                <label for="nav-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="nav-links">
+                <a href="../blog.html" rel="noopener">blog</a>
+                <a href="../fileshare/file-index.html" rel="noopener"
+                    >fileshare</a
+                >
+                <a
+                    href="https://github.com/nothingneko"
+                    target="_blank"
+                    rel="noopener"
+                    >github</a
+                >
+                <a
+                    href="https://ordinary.cafe/@jaiden"
+                    target="_blank"
+                    rel="noopener"
+                    >fedi</a
+                >
+                <a
+                    href="https://twitter.com/nothingneko_"
+                    target="_blank"
+                    rel="noopener"
+                    >twitter</a
+                >
+                <a
+                    href="https://bsky.app/profile/jaiden.sh"
+                    target="_blank"
+                    rel="noopener"
+                    >bsky</a
+                >
+                <a
+                    href="https://github.com/sponsors/nothingneko"
+                    target="_blank"
+                    rel="noopener"
+                    >give me money</a
+                >
+            </div>
+        </nav>
+        <div class="content">
+            <br />
+            <h1>learning to appreciate dotfiles</h1>
+            <subtitle>march 24 2026</subtitle>
+            <br />
+            <br />
+            <p>
+                for years i've had an incredibly undermaintained dotfiles repo
+                that did nothing. i'd always used cloud sync or just manually
+                recreated configs.
+            </p>
+            <p>
+                this was fine until i switched to zed, and started sending
+                myself the config file in signal's note to self feature. this is
+                very very scuffed, but it worked out because it was the only app
+                i used like this.
+            </p>
+            <p>
+                then i got frustrated with warp and switched to ghostty, meaning
+                now i had another config file floating around, once again, fine
+                because i can just send it to myself for the two apps that use
+                it.
+            </p>
+            <p>
+                now we're to now, after leaving warp, i had to start recreating
+                functionalities i used with zshrc and ohmyzsh, which is where
+                things start to get painful.
+            </p>
+            <p>
+                every time i update my zshrc, i have to remember to send it to
+                myself before closing the file. this fucking sucks. and now that
+                i'm preparing to switch to atomic, and started using flox, i
+                have yet another thing i can't set up graphically/with a
+                package.
+            </p>
+            <p>
+                my philosophy has always been to try to use the gui for as much
+                as possible, it's convenient and i get to find papercuts before
+                my ultramarine users do. despite this i am rather fluent in the
+                terminal (except with git). this philosophy isn't changing at
+                large, but as i use more and more software that's built by devs
+                for devs, i'm forced to re-enter this world of configs.
+            </p>
+            <p>
+                so now i have a dotfiles repo again, and it actually exists this
+                time. it contains my fancy zshrc, my ghostty configs for mac and
+                linux, my zed config, and a script that installs all of them.
+            </p>
+            <p>
+                i'd suggest not using the script or zshrc if you're not me (it
+                sets up my git credentials and makes assumptions, like my flox
+                envs), but feel free to try those configs, i think they're
+                pretty good!
+            </p>
+            <p>
+                more stuff will be landing here in the future, i may stop using
+                floxhub for my default environments, jadeite may move here (not
+                sure yet) and i wanna throw a niri+DMS config in there for when
+                i'm feeling like a window manager.
+            </p>
+            <p>
+                anyway that was really rambly, thanks for sticking with it,
+                check out my dotfiles
+                <a href="https://github.com/nothingneko/dotfiles">here.</a> and
+                be ready for a post about getting fyra repos up on devcontainers
+                (and flox sometimes) soon!🐾
+            </p>
+        </div>
+    </body>
+</html>
