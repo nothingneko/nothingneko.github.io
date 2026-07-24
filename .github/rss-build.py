@@ -32,7 +32,7 @@ def buildRSS(baseURL: str, posts: list[(str, str, dt, str)]):
     channel = ET.SubElement(feed, "channel")
     ET.SubElement(channel, "title").text = TITLE
     ET.SubElement(channel, "link").text = baseURL + "blog.html"
-    ET.SubElement(channel, f"{{{ATOM_NS}}}link", {"rel": "self", "type": "application/rss+xml", "href": baseURL + "feed.rss"})
+    ET.SubElement(channel, f"{{{ATOM_NS}}}link", {"rel": "self", "type": "application/rss+xml", "href": baseURL + "blog/feed.rss"})
     ET.SubElement(channel, "description").text = DESCRIPTION
     ET.SubElement(channel, "language").text = "en"
 
