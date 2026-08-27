@@ -25,14 +25,14 @@ def rfc822(dt: dt) -> str:
     return (f'{ctime[0:3]}, {dt.day:02d} {ctime[4:7]}'
                 + dt.strftime(' %Y %H:%M:%S %z'))
 
-def buildRSS(baseURL: str, posts: list[(str, str, dt, str)]):
+def buildRSS(title: str, baseURL: str, posts: list[(str, str, dt, str)], channelStr: str|bool = False):
     ET.register_namespace("atom", ATOM_NS)
     ET.register_namespace("dc", DC_NS)
     feed = ET.Element("rss", {"version": "2.0"})
     channel = ET.SubElement(feed, "channel")
-    ET.SubElement(channel, "title").text = TITLE
+    ET.SubElement(channel, "title").text = title
     ET.SubElement(channel, "link").text = baseURL + "blog.html"
-    ET.SubElement(channel, f"{{{ATOM_NS}}}link", {"rel": "self", "type": "application/rss+xml", "href": baseURL + "blog/feed.rss"})
+    ET.SubElement(channel, f"{{{ATOM_NS}}}link", {"rel": "self", "type": "application/rss+xml", "href": baseURL + f"blog/feed{"." + channelStr if channelStr else ""}.xml"})
     ET.SubElement(channel, "description").text = DESCRIPTION
     ET.SubElement(channel, "language").text = "en"
 
@@ -61,6 +61,13 @@ def parsePost(post):
     with open(post, 'r') as f:
         soup = BeautifulSoup(f, features="html.parser")
 
+        # Channel
+        channel = soup.find("meta", property="channel")
+        if channel:
+            channel = channel["content"]
+        else:
+            channel = False
+
         # Post Title
         title = soup.find("h1")
         if title:
@@ -78,7 +85,7 @@ def parsePost(post):
         if desc:
             desc = " ".join(desc[0].string.split())
 
-        return (title, basename(post), date, desc)
+        return (title, basename(post), date, desc, channel)
 
 def getListOfBlogPosts(blogDir):
     return [file for file in listdir(blogDir) if isfile(join(blogDir, file)) and file.endswith('.html')]
@@ -94,7 +101,13 @@ def main():
     baseUrl = args.baseUrl
     posts = getListOfBlogPosts(blogDir)
     posts = [parsePost(join(blogDir, post)) for post in getListOfBlogPosts(blogDir)]
-    with open(args.output, 'w') as f:
-        f.write(buildRSS(baseUrl, posts) + '\n')
+    with open(args.output + '.xml', 'w') as f:
+        f.write(buildRSS(TITLE, baseUrl, posts) + '\n')
+
+    channels = [post[4] for post in posts if post[4] != False]
+    for channel in channels:
+        channelPosts = [post for post in posts if post[4] == channel]
+        with open(args.output + f'.{channel}.xml', 'w') as f:
+            f.write(buildRSS(TITLE + f' - {channel}', baseUrl, channelPosts, channel) + '\n') 
 
 main()

@@ -26,7 +26,7 @@ jobs:
         run: |
           url=$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq '.html_url')
           echo "url=$url" >> $GITHUB_ENV
-      - run: .github/rss-build.py "${GITHUB_WORKSPACE}/blog" --baseUrl "${{ env.url }}" --output "${GITHUB_WORKSPACE}/blog/feed.xml"
+      - run: .github/rss-build.py "${GITHUB_WORKSPACE}/blog" --baseUrl "${{ env.url }}" --output "${GITHUB_WORKSPACE}/blog/feed"
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: .
